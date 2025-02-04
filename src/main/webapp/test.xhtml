@@ -16,7 +16,14 @@
 
         <h1>#{testView.string}</h1>
         <h:form id="frmTest">
-            
+    <p:ajaxStatus onstart="console.log('start');" 
+	 onsuccess="console.log('success');"
+	 onerror="console.log('error');"
+	 oncomplete="console.log('complete');" />
+				         
+	<p:selectBooleanCheckbox id="globalInd" value="#{testView.testVal}" >
+		<f:ajax event="change"/>
+	</p:selectBooleanCheckbox>
         </h:form>
 
     </h:body>
