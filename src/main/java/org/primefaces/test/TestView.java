@@ -22,7 +22,9 @@ public class TestView implements Serializable {
     private BigDecimal decimal;
     private LocalDateTime localDateTime;
     private List<TestObject> list;
-
+    
+    private Boolean testVal;
+    
     @PostConstruct
     public void init() {
         string = "Welcome to PrimeFaces!!!";
