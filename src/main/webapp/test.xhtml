@@ -12,9 +12,20 @@
     </h:head>
     <h:body>
 
-        <h1>#{testView.string}</h1>
-        <h:form id="frmTest">
+        <h:form id="frmTest1">
+                Widget 1: <p:autoComplete id="acSimple1" value="#{testView.txt1}"
+                                completeMethod="#{testView.completeText}" scrollHeight="250">
+                      <f:attribute name="widgetPostConstruct" value="widget.emptyMessage = 'No results found - widget 1.';"/>
+               </p:autoComplete>
+               
+               <p:commandLink title="Update Widget2 form" update=":frmTest2" >Update</p:commandLink>
+        </h:form>
 
+        <h:form id="frmTest2">
+                Widget 2: <p:autoComplete id="acSimple2" value="#{testView.txt2}"
+                                completeMethod="#{testView.completeText}" scrollHeight="250">
+                     <f:attribute name="widgetPostConstruct" value="widget.emptyMessage = 'No results found - widget 2.';"/>
+               </p:autoComplete>
         </h:form>
 
     </h:body>

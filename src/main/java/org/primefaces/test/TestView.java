@@ -1,14 +1,11 @@
 package org.primefaces.test;
 
 import java.io.Serializable;
-import java.time.LocalDateTime;
-import java.math.BigDecimal;
 import jakarta.annotation.PostConstruct;
 import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Named;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import lombok.Data;
 
@@ -17,21 +14,20 @@ import lombok.Data;
 @ViewScoped
 public class TestView implements Serializable {
 
-    private String string;
-    private Integer integer;
-    private BigDecimal decimal;
-    private LocalDateTime localDateTime;
-    private List<TestObject> list;
+	private static final long serialVersionUID = 1L;
+
+	private String txt1;
+	private String txt2;
+	
+	private final List<String> countries = List.of("country 1","country 2","country 3","country 4","country 5","country 6");
 
     @PostConstruct
     public void init() {
-        string = "Welcome to PrimeFaces!!!";
-        list = new ArrayList<>(Arrays.asList(
-                new TestObject("Thriller", "Michael Jackson", 1982),
-                new TestObject("Back in Black", "AC/DC", 1980),
-                new TestObject("The Bodyguard", "Whitney Houston", 1992),
-                new TestObject("The Dark Side of the Moon", "Pink Floyd", 1973)
-        ));
+
     }
 
+    public List<String> completeText(String query) {
+        final String queryLowerCase = query.toLowerCase();
+        return countries.stream().filter(t -> t.toLowerCase().startsWith(queryLowerCase)).collect(Collectors.toList());
+    }
 }
