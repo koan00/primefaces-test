@@ -13,9 +13,32 @@
     <h:body>
 
         <h1>#{testView.string}</h1>
-        <h:form id="frmTest">
-
-        </h:form>
-
+		
+	<!-- uncomment, and both panels work
+	<h:form>
+       <p:accordionPanel multiple="true" multiViewState="true">
+            <p:tab title="Tasks1" titleStyleClass="dashboardAccHeader dashAssignment" >
+				number12345
+            </p:tab>
+            <p:tab title="Tasks2" titleStyleClass="dashboardAccHeader dashTasks">
+				number22345
+            </p:tab>
+            <p:tab title="Tasks3" titleStyleClass="dashboardAccHeader dashTasks">
+				number32345
+            </p:tab>
+         </p:accordionPanel> 
+	</h:form> -->
+		
+       <p:accordionPanel multiple="true" multiViewState="true">
+            <p:tab title="Tasks1" titleStyleClass="dashboardAccHeader dashAssignment" >
+				number12345
+            </p:tab>
+            <p:tab title="Tasks2" titleStyleClass="dashboardAccHeader dashTasks">
+				number22345
+            </p:tab>
+            <p:tab title="Tasks3" titleStyleClass="dashboardAccHeader dashTasks">
+				number32345
+            </p:tab>
+         </p:accordionPanel> 
     </h:body>
 </html>
