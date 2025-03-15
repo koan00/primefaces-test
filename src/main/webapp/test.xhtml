@@ -1,44 +1,26 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="jakarta.faces.facelets"
-      xmlns:f="jakarta.faces.core"
-      xmlns:h="jakarta.faces.html"
-      xmlns:p="primefaces">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="jakarta.faces.facelets" 
+                xmlns:h="jakarta.faces.html"  
+                xmlns:f="jakarta.faces.core"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:c="jakarta.tags.core"
+                xmlns:sec="http://www.springframework.org/security/tags"
+                template="layout_default.xhtml">
+    <ui:define name="content">	
 
-    <h:head>
-        <title>PrimeFaces Test</title>
-        <h:outputScript name="test.js" />
-        <h:outputStylesheet name="test.css" />
-    </h:head>
-    <h:body>
 
-        <h1>#{testView.string}</h1>
-		
-	<!-- uncomment, and both panels work
-	<h:form>
-       <p:accordionPanel multiple="true" multiViewState="true">
-            <p:tab title="Tasks1" titleStyleClass="dashboardAccHeader dashAssignment" >
-				number12345
+	 	<h:form><input type="hidden" name="test" value="test" /></h:form>
+        <p:accordionPanel id="dashboard" multiple="true" multiViewState="true" dynamic="true">
+
+            <!-- Assignments -->
+            <p:tab title="Assignments" titleStyleClass="dashboardAccHeader dashAssignment" >
+				test2
             </p:tab>
-            <p:tab title="Tasks2" titleStyleClass="dashboardAccHeader dashTasks">
-				number22345
+            <!-- Tasks -->
+            <p:tab title="Tasks" titleStyleClass="dashboardAccHeader dashTasks">
+                test1
             </p:tab>
-            <p:tab title="Tasks3" titleStyleClass="dashboardAccHeader dashTasks">
-				number32345
-            </p:tab>
-         </p:accordionPanel> 
-	</h:form> -->
-		
-       <p:accordionPanel multiple="true" multiViewState="true">
-            <p:tab title="Tasks1" titleStyleClass="dashboardAccHeader dashAssignment" >
-				number12345
-            </p:tab>
-            <p:tab title="Tasks2" titleStyleClass="dashboardAccHeader dashTasks">
-				number22345
-            </p:tab>
-            <p:tab title="Tasks3" titleStyleClass="dashboardAccHeader dashTasks">
-				number32345
-            </p:tab>
-         </p:accordionPanel> 
-    </h:body>
-</html>
+
+        </p:accordionPanel>
+    </ui:define>
+</ui:composition>
