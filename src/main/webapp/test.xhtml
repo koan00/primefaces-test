@@ -13,9 +13,57 @@
     <h:body>
 
         <h1>#{testView.string}</h1>
-        <h:form id="frmTest">
+        <h:form id="frmTest"></h:form>
+		
+		<p:accordionPanel dynamic="true" multiple="true" cache="false" style="width: 600px;">
+			<p:tab>
+				<f:facet name="title" >
+					Title
+				</f:facet>
+				<h:form id="accordionInnerForm1">
+					<p:dataTable id="requestNotesDataTable1" value="#{testView.list2}"
+								 emptyMessage="Nothing to see here. Nothing at all." var="obj"
+								 paginator="true" paginatorPosition="bottom" >
+						<p:column headerText="id">
+							<h:outputText value="#{obj.id}"/>
+						</p:column>									 
+						<p:column headerText="name">
+							<h:outputText value="#{obj.name}"/>
+						</p:column>	
+						<p:column headerText="artist">
+							<h:outputText value="#{obj.artist}"/>
+						</p:column>	
+						<p:column headerText="released">
+							<h:outputText value="#{obj.released}"/>
+						</p:column>								
+					</p:dataTable>		
+				</h:form>
+			</p:tab>
+			<p:tab>
+				<f:facet name="title" >
+					Title
+				</f:facet>
+				<h:form id="accordionInnerForm2">
+					<p:dataTable id="requestNotesDataTable2" value="#{testView.list2}"
+								 emptyMessage="Nothing to see here. Nothing at all." var="obj"
+								 paginator="true" paginatorPosition="bottom" >
+						<p:column headerText="id">
+							<h:outputText value="#{obj.id}"/>
+						</p:column>	
+						<p:column headerText="name">
+							<h:outputText value="#{obj.name}"/>
+						</p:column>	
+						<p:column headerText="artist">
+							<h:outputText value="#{obj.artist}"/>
+						</p:column>	
+						<p:column headerText="released">
+							<h:outputText value="#{obj.released}"/>
+						</p:column>							
+					</p:dataTable>		
+				</h:form>
+			</p:tab>
+		</p:accordionPanel>	
 
-        </h:form>
 
     </h:body>
 </html>
