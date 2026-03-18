@@ -25,7 +25,7 @@ public class TestView implements Serializable {
 
     @PostConstruct
     public void init() {
-        string = "Welcome to PrimeFaces!!!";
+        string = "";
         list = new ArrayList<>(Arrays.asList(
                 new TestObject("Thriller", "Michael Jackson", 1982),
                 new TestObject("Back in Black", "AC/DC", 1980),

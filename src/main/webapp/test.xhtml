@@ -1,21 +1,43 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="jakarta.faces.facelets"
-      xmlns:f="jakarta.faces.core"
-      xmlns:h="jakarta.faces.html"
-      xmlns:p="primefaces">
+	xmlns:ui="jakarta.faces.facelets" xmlns:f="jakarta.faces.core"
+	xmlns:h="jakarta.faces.html" xmlns:p="primefaces">
 
-    <h:head>
-        <title>PrimeFaces Test</title>
-        <h:outputScript name="test.js" />
-        <h:outputStylesheet name="test.css" />
-    </h:head>
-    <h:body>
+<h:head>
+	<title>PrimeFaces Test</title>
+	<h:outputScript name="test.js" />
+	<h:outputStylesheet name="test.css" />
+</h:head>
+<h:body>
 
-        <h1>#{testView.string}</h1>
-        <h:form id="frmTest">
+	<h:form id="frmTest">
+		<p:panelGrid layout="tabular" columns="0" id="pnlgrdtaskSearchLeft"
+			style="display: inline;">
+			<p:row>
+				<p:column>
+					<h:outputLabel value="Title:" />
+				</p:column>
+				<p:column>
+					<p:selectOneMenu id="txt3" value="#{testView.string}"
+						required="true" label="Text 3">
+						<f:selectItem itemLabel="Select One" itemValue="" noSelectionOption="true" />
+						<f:selectItem itemLabel="Option 1" itemValue="1" />
+						<f:selectItem itemLabel="Option 2" itemValue="2" />
+						<f:selectItem itemLabel="Option 3" itemValue="3" />
+						<p:ajax event="change" update="@(tr.updateStyleClass)" />
+					</p:selectOneMenu>
+				</p:column>
+			</p:row>
+			<p:row styleClass="updateStyleClass" id="test1234">
+				<p:column>
+					<h:outputLabel value="update:" rendered="#{not empty testView.string}" />
+				</p:column>
+				<p:column>
+					<h:outputLabel value="#{testView.string}" rendered="#{not empty testView.string}" />
+				</p:column>
+			</p:row>
+		</p:panelGrid>
+	</h:form>
 
-        </h:form>
-
-    </h:body>
+</h:body>
 </html>
